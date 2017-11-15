@@ -20,6 +20,10 @@ main =
         |> print
     , Accessor.name noAccessor
         |> print
+    , Accessor.name ((\_ -> \args -> args.counter) ())
+        |> print
+    , Accessor.name toString
+        |> print
     ]
         |> Html.div []
 

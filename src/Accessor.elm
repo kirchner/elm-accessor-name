@@ -14,7 +14,7 @@ name accessor =
                 Just text
     in
     Native.Function.print accessor
-        |> find All (regex "\\w+\\.(\\w+)")
+        |> find All (regex "function\\s*\\(\\w+\\)\\s*{\\s*return\\s*\\w+\\.(\\w+);\\s*}")
         |> List.filterMap
             (\match ->
                 case match.submatches of
